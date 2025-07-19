@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import CanvasScene from './CanvasScene';
+import AnimatedBackground from './AnimatedBackground';
+import RotatingPolyhedron from './RotatingPolyhedron';
 import { gsap } from 'gsap';
 
 const Hero = () => {
@@ -35,9 +36,13 @@ const Hero = () => {
 
   return (
     <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-      <CanvasScene />
+      {/* Particles Background */}
+      <AnimatedBackground variant="particles" />
       
-      <div className="relative z-10 text-center px-4 max-w-4xl">
+      {/* Rotating Polyhedron */}
+      <RotatingPolyhedron />
+      
+      <div className="relative z-20 text-center px-4 max-w-4xl">
         <h1 
           ref={titleRef}
           className="text-5xl md:text-7xl font-bold font-sora mb-6"
