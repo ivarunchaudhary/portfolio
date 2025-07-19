@@ -1,4 +1,4 @@
-# Alex Portfolio - React Version
+# Varun Portfolio - React Version
 
 A modern, animated personal portfolio website built with React, featuring 3D graphics, smooth animations, and a responsive design.
 
@@ -74,6 +74,3 @@ src/
 
 Feel free to fork this project and customize it for your own portfolio!
 
-## 📄 License
-
-MIT License - feel free to use this project for your own portfolio.
