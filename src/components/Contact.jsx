@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CustomClickSpark from './CustomClickSpark';
+import CustomSplitText from './CustomSplitText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,14 +52,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={contactRef} className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
-        <h2 
-          ref={headingRef}
+    <section id="contact" ref={contactRef} className="py-16 sm:py-20 px-4">
+      <div className="max-w-xl sm:max-w-2xl mx-auto">
+        <CustomSplitText
+          text="Get in Touch"
           className="text-4xl md:text-5xl font-bold font-sora text-center mb-16"
-        >
-          Get in Touch
-        </h2>
+          delay={0}
+          duration={0.8}
+          from={{ opacity: 0, y: 50 }}
+          to={{ opacity: 1, y: 0 }}
+          splitType="words"
+          stagger={0.2}
+          triggerOnScroll={true}
+        />
         
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -71,7 +78,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none"
               placeholder="Your name"
             />
           </div>
@@ -87,7 +94,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none"
               placeholder="your.email@example.com"
             />
           </div>
@@ -103,27 +110,35 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows={5}
-              className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none resize-none"
+              className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 focus:border-fuchsia-400 focus:ring-2 focus:ring-fuchsia-400/20 transition-all duration-300 outline-none resize-none"
               placeholder="Tell me about your project..."
             />
           </div>
           
-          <button
-            type="submit"
-            className="w-full bg-fuchsia-500 hover:bg-fuchsia-600 text-white py-4 px-6 rounded-lg font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-fuchsia-500/25 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-offset-2 focus:ring-offset-transparent"
+          <CustomClickSpark
+            sparkColor="#d946ef"
+            sparkSize={10}
+            sparkRadius={30}
+            sparkCount={15}
+            duration={600}
           >
-            Send Message
-          </button>
+            <button
+              type="submit"
+              className="w-full bg-fuchsia-500 hover:bg-fuchsia-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-fuchsia-500/25 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-offset-2 focus:ring-offset-transparent"
+            >
+              Send Message
+            </button>
+          </CustomClickSpark>
         </form>
         
         <div className="text-center mt-12">
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 transition-colors duration-300">
             Or reach out directly at{' '}
             <a 
-              href="mailto:alex@example.com" 
-              className="text-fuchsia-400 hover:text-fuchsia-500 transition-colors duration-300"
+              href="mailto:varunjat640@gmail.com" 
+              className="text-fuchsia-400 hover:text-fuchsia-500 hover:scale-105 inline-block transition-all duration-300 hover:underline decoration-2 underline-offset-4"
             >
-              alex@example.com
+              varunjat640@gmail.com
             </a>
           </p>
         </div>

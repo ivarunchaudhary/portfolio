@@ -45,7 +45,7 @@ const RotatingPolyhedron = () => {
 
     let rotationX = 0;
     let rotationY = 0;
-    const scale = 200; // Size of the polyhedron
+    const scale = 280; // Size of the polyhedron (increased from 200)
 
     // 3D to 2D projection
     const project = (vertex) => {

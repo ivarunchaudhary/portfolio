@@ -43,3 +43,32 @@ html {
 .light {
   @apply bg-white text-zinc-800;
 }
+
+/* Social icons animations */
+@keyframes social-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes social-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-social-appear {
+  opacity: 0;
+  animation: social-appear 0.5s forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+.social-icon-link:hover {
+  animation: social-pulse 1s infinite;
+  box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);
+}

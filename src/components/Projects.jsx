@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import CustomClickSpark from './CustomClickSpark';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +30,7 @@ const ProjectCard = ({ title, description, link, image, index }) => {
   return (
     <div 
       ref={cardRef}
-      className="group relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black border border-zinc-700/50 hover:border-fuchsia-500/50 transition-all duration-500"
+      className="group relative h-80 sm:h-72 md:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black border border-zinc-700/50 hover:border-fuchsia-500/50 transition-all duration-500"
       style={{ perspective: '1000px' }}
     >
       <div 
@@ -40,6 +41,15 @@ const ProjectCard = ({ title, description, link, image, index }) => {
         }}
         onMouseEnter={(e) => e.currentTarget.style.transform = 'rotateY(180deg)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'rotateY(0deg)'}
+        onClick={(e) => {
+          // Toggle flip on touch devices
+          const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+          if (isTouchDevice) {
+            const currentTransform = e.currentTarget.style.transform;
+            e.currentTarget.style.transform = 
+              currentTransform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+          }
+        }}
       >
         {/* Front side */}
         <div 
@@ -49,29 +59,37 @@ const ProjectCard = ({ title, description, link, image, index }) => {
             backfaceVisibility: 'hidden'
           }}
         >
-          <h3 className="text-2xl font-bold font-sora text-white text-center px-6">
+          <h3 className="text-2xl font-bold font-sora text-white text-center px-6 hover:text-fuchsia-300 hover:scale-110 transition-all duration-300">
             {title}
           </h3>
         </div>
         
         {/* Back side */}
         <div 
-          className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-fuchsia-500/20 to-sky-500/20 backdrop-blur-sm"
+          className="absolute inset-0 flex flex-col items-center justify-center p-3 sm:p-4 md:p-6 bg-gradient-to-br from-fuchsia-500/20 to-sky-500/20 backdrop-blur-sm"
           style={{ 
             transform: 'rotateY(180deg)',
             backfaceVisibility: 'hidden'
           }}
         >
-          <p className="text-center text-zinc-200 mb-6 leading-relaxed">
+          <p className="text-center text-zinc-200 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
             {description}
           </p>
-          <a 
-            href={link}
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full transition-all duration-300 text-white hover:scale-105"
+          <CustomClickSpark
+            sparkColor="#38bdf8"
+            sparkSize={6}
+            sparkRadius={20}
+            sparkCount={10}
+            duration={400}
           >
-            View Project
-            <ExternalLink className="w-4 h-4" />
-          </a>
+            <a 
+              href={link}
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full transition-all duration-300 text-white hover:scale-105"
+            >
+              View Project
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </CustomClickSpark>
         </div>
       </div>
     </div>
@@ -130,7 +148,7 @@ const Projects = () => {
           Projects
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
