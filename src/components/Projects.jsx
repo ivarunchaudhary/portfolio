@@ -102,22 +102,22 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Code Visualizer",
-      description: "Interactive WebGL-powered code visualization tool that transforms algorithms into beautiful 3D representations in real-time.",
-      link: "#",
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop"
+      title: "Online Chatting Platform",
+      description: "A online chatting website for collage students work in progress.",
+      link: "https://www.ogadda.com",
+      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=300&fit=crop"
     },
     {
-      title: "Mobile App",
-      description: "Cutting-edge React Native application featuring AR capabilities for immersive user experiences and seamless cross-platform functionality.",
-      link: "#",
+      title: "Routien Planner",
+      description: "A beautiful, modern web application that gives users a personalized daily summary to start their day right.",
+      link: "https://github.com/ivarunchaudhary/routine-planner",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop"
     },
     {
-      title: "VR Tour",
-      description: "Revolutionary Three.js and WebXR virtual reality experience that transports users through interactive 3D environments.",
-      link: "#",
-      image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=400&h=300&fit=crop"
+      title: "Stack-it",
+      description: "A modern clone of stack overflow website with more modern ui and features.",
+      link: "https://github.com/ivarunchaudhary/odoo",
+      image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA2wMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAACAQAGB//EABoQAQEBAAMBAAAAAAAAAAAAAAABEQIhMUH/xAAZAQEBAAMBAAAAAAAAAAAAAAACAwEFBgD/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/APPGVHaUrLEKPWcsUSFIwzCsKJIQsyqxpCgzCqxpFkBnXCiSFILUCsKJIQsyxSNIUBmFiiLgsyRRJCkFZhWLGhSAzCuFEWCtQrITSFgzLkWRY3VzFsWMUnbEwtDxIQrMKyKhQZhWQpEhSCzrCkQoCzC2FI0mlBqBVcQ5BWYWkKJiizliyJCkCYSkVoWC1AtIUaLBWYVKJIQMyUjNFwdmFx5RlxvG5gLQmkKDswtCjSKM8rCSEC1ArCSFIKyCsJMWC1AlFaLBWYVkKNJ0oLMKxY0WQVmFZDiRRWYWhxIWC1ArFjQpAWeVhNFgswrIrRRqBccUiSFG8uXKyFEKQVmFSk6SELMtDkSRYEwrCkSQ4LULcYWNFFkWhyJIUFqBVcaRcBmFZDgwwahaQpEkKDMKyK0KQVmFpDkSQsBmFpCkaQoO1C0iquDUC46FEKN43LFYUQoNQLQokOQWZaEkKAzKwokhjMssZZBZhKLGi4KzKlIkKQJhWQohSA1C0hxlxhZhaQo0hSAzK/FiQ5BagWKMUFqFoTSKEwuOkJIsb25cKyFI0XAZlZCiQhkFZCiFIFQKyEhSMMgtCaRQqBWQkhSAzC0hyJCFagWkOJIWDMLQo0WAzlISRYOzCshSJCkFqBUokhSDUCsisQyLjSiQm8W5kKwkhDIKxZGiwVnkoSQoDMtCiQowswqrQgWYWkOJCBagWLikMZhaFGiyAtQKyFIkIdkFsONFgtQKxZ60KCtQKwkhQZhaFjSKCzC42Q5EkKN5cvWRWkIVmFocgyGMwtCkTCkFZhWK0hYCzCmHIkODUC0hRIUgLMKyFEhCtQKyFIkKQJFsKRoQ7UCsiz1pFkYWYSkKRIQNQsUiYUgNQKwsaLjFQuNkKRDjeXKhaFJrYUgMyyxljEwlCSFBahZY0KQGYVkKJCgMwtIcQhZhaFIkODOxMUgNQKyLGhQZhbDiFBqBaEhC1ArFjQgmVkVouDO42HGZvW5YlCZhmVhRmBmShRmBmVhRmYqEoUZgmTixmFmSk6OMwTKwmZioSixWBqEijMMysJmCoShRmFmSJmGV/9k="
     }
   ];
 

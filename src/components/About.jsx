@@ -57,7 +57,7 @@ const About = () => {
             Currently a first-year engineering student at IILM University Gurugram<br />
             Participated in many hackathons<br />
             <span className="text-fuchsia-400 font-bold inline-block relative px-1 py-0.5 bg-fuchsia-400/5 rounded border border-fuchsia-400/20 transform hover:scale-105 transition-all duration-300">
-              SIH 2024 finalist
+              🏆SIH 2024 finalist
             </span><br />
             I'm especially driven by open-source, fast prototyping, and combining AI with intuitive UI/UX.
           </p>
