@@ -59,7 +59,7 @@ const ProjectCard = ({ title, description, link, image, index }) => {
             backfaceVisibility: 'hidden'
           }}
         >
-          <h3 className="text-2xl font-bold font-sora text-white text-center px-6 hover:text-fuchsia-300 hover:scale-110 transition-all duration-300">
+          <h3 className="text-2xl font-bold font-sora text-white text-center px-6 text-gradient-hover transition-all duration-300">
             {title}
           </h3>
         </div>
@@ -114,10 +114,10 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop"
     },
     {
-      title: "Stack-it",
+      title: "Stack-it, \n(Drop your question)",
       description: "A modern clone of stack overflow website with more modern ui and features.",
       link: "https://github.com/ivarunchaudhary/odoo",
-      image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA2wMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAACAQAGB//EABoQAQEBAAMBAAAAAAAAAAAAAAABEQIhMUH/xAAZAQEBAAMBAAAAAAAAAAAAAAACAwEFBgD/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/APPGVHaUrLEKPWcsUSFIwzCsKJIQsyqxpCgzCqxpFkBnXCiSFILUCsKJIQsyxSNIUBmFiiLgsyRRJCkFZhWLGhSAzCuFEWCtQrITSFgzLkWRY3VzFsWMUnbEwtDxIQrMKyKhQZhWQpEhSCzrCkQoCzC2FI0mlBqBVcQ5BWYWkKJiizliyJCkCYSkVoWC1AtIUaLBWYVKJIQMyUjNFwdmFx5RlxvG5gLQmkKDswtCjSKM8rCSEC1ArCSFIKyCsJMWC1AlFaLBWYVkKNJ0oLMKxY0WQVmFZDiRRWYWhxIWC1ArFjQpAWeVhNFgswrIrRRqBccUiSFG8uXKyFEKQVmFSk6SELMtDkSRYEwrCkSQ4LULcYWNFFkWhyJIUFqBVcaRcBmFZDgwwahaQpEkKDMKyK0KQVmFpDkSQsBmFpCkaQoO1C0iquDUC46FEKN43LFYUQoNQLQokOQWZaEkKAzKwokhjMssZZBZhKLGi4KzKlIkKQJhWQohSA1C0hxlxhZhaQo0hSAzK/FiQ5BagWKMUFqFoTSKEwuOkJIsb25cKyFI0XAZlZCiQhkFZCiFIFQKyEhSMMgtCaRQqBWQkhSAzC0hyJCFagWkOJIWDMLQo0WAzlISRYOzCshSJCkFqBUokhSDUCsisQyLjSiQm8W5kKwkhDIKxZGiwVnkoSQoDMtCiQowswqrQgWYWkOJCBagWLikMZhaFGiyAtQKyFIkIdkFsONFgtQKxZ60KCtQKwkhQZhaFjSKCzC42Q5EkKN5cvWRWkIVmFocgyGMwtCkTCkFZhWK0hYCzCmHIkODUC0hRIUgLMKyFEhCtQKyFIkKQJFsKRoQ7UCsiz1pFkYWYSkKRIQNQsUiYUgNQKwsaLjFQuNkKRDjeXKhaFJrYUgMyyxljEwlCSFBahZY0KQGYVkKJCgMwtIcQhZhaFIkODOxMUgNQKyLGhQZhbDiFBqBaEhC1ArFjQgmVkVouDO42HGZvW5YlCZhmVhRmBmShRmBmVhRmYqEoUZgmTixmFmSk6OMwTKwmZioSixWBqEijMMysJmCoShRmFmSJmGV/9k="
+      image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA2wMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAACAQAGB//EABoQAQEBAAMBAAAAAAAAAAAAAAABEQIhMUH/xAAZAQEBAAMBAAAAAAAAAAAAAAACAwEFBgD/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAMAwEAAhEDEQA/APPGVHaUrLEKPWcsUSFIwzCsKJIQsyqxpCgzCqxpFkBnXCiSFILUCsKJIQsyxSNIUBmFiiLgsyRRJCkFZhWLGhSAzCuFEWCtQrITSFgzLkWRY3VzFsWMUnbEwtDxIQrMKyKhQZhWQpEhSCzrCkQoCzC2FI0mlBqBVcQ5BWYWkKJiizliyJCkCYSkVoWC1AtIUaLBWYVKJIQMyUjNFwdmFx5RlxvG5gLQmkKDswtCjSKM8rCSEC1ArCSFIKyCsJMWC1AlFaLBWYVkKNJ0oLMKxY0WQVmFZDiRRWYWhxIWC1ArFjQpAWeVhNFgswrIrRRqBccUiSFG8uXKyFEKQVmFSk6SELMtDkSRYEwrCkSQ4LULcYWNFFkWhyJIUFqBVcaRcBmFZDgwwahaQpEkKDMKyK0KQVmFpDkSQsBmFpCkaQoO1C0iquDUC46REKN43LFYUQoNQLQokOQWZaEkKAzKwokhjMssZZBZhKLGi4KzKlIkKQJhWQohSA1C0hxlxhZhaQo0hSAzK/FiQ5BagWKMUFqFoTSKEwuOkJIsb25cKyFI0XAZlZCiQhkFZCiFIFQKyEhSMMgtCaRQqBWQkhSAzC0hyJCFagWkOJIWDMLQo0WAzlISRYOzCshSJCkFqBUokhSDUCsisQyLjSiQm8W5kKwkhDIKxZGiwVnkoSQoDMtCiQowswqrQgWYWkOJCBagWLikMZhaFGiyAtQKyFIkIdkFsONFgtQKxZ60KCtQKwkhQZhaFjSKCzC42Q5EkKN5cvWRWkIVmFocgyGMwtCkTCkFZhWK0hYCzCmHIkODUC0hRIUgLMKyFEhCtQKyFIkKQJFsKRoQ7UCsiz1pFkYWYSkKRIQNQsUiYUgNQKwsaLjFQuNkKRDjeXKhaFJrYUgMyyxljEwlCSFBahZY0KQGYVkKJCgMwtIcQhZhaFIkODOxMUgNQKyLGhQZhbDiFBqBaEhC1ArFjQgmVkVouDO42HGZvW5YlCZhmVhRmBmShRmBmVhRmYqEoUZgmTixmFmSk6OMwTKwmZioShRWBqEijMMysJmCoShRmFmSJmGV/9k="
     }
   ];
 
@@ -143,7 +143,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <h2 
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold font-sora text-center mb-16"
+          className="text-4xl md:text-5xl font-bold font-sora text-center mb-16 text-float-hover"
         >
           Projects
         </h2>

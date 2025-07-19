@@ -47,10 +47,10 @@ const About = () => {
         />
         
         <div ref={contentRef} className="space-y-6">
-          <p className="text-lg md:text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 transition-colors duration-300">
+          <p className="text-lg md:text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 text-reveal-hover transition-colors duration-300">
             I'm Varun Chaudhary — a curious engineer, passionate builder, and startup enthusiast on a mission to solve real-world problems through tech. I love bridging{' '}
-            <span className="text-fuchsia-400 font-semibold hover:text-fuchsia-300 hover:scale-105 inline-block transition-all duration-300 cursor-default">creativity</span> with{' '}
-            <span className="text-sky-400 font-semibold hover:text-sky-300 hover:scale-105 inline-block transition-all duration-300 cursor-default">code</span> to create meaningful, user-centric digital experiences.
+            <span className="text-fuchsia-400 font-semibold text-glitch-hover inline-block transition-all duration-300 cursor-default">creativity</span> with{' '}
+            <span className="text-sky-400 font-semibold text-float-hover inline-block transition-all duration-300 cursor-default">code</span> to create meaningful, user-centric digital experiences.
           </p>
           
           <p className="text-lg md:text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 hover:text-zinc-500 dark:hover:text-zinc-300 transition-colors duration-300">

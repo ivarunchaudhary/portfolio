@@ -1,67 +1,55 @@
 import React, { useRef, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { gsap } from 'gsap';
+import CustomSplitText from './CustomSplitText';
+import CustomClickSpark from './CustomClickSpark';
 import AnimatedBackground from './AnimatedBackground';
 import RotatingPolyhedron from './RotatingPolyhedron';
-import CustomSplitText from './CustomSplitText';
-import GradientText from '../blocks/TextAnimations/GradientText/GradientText';
-import CustomClickSpark from './CustomClickSpark';
-import { gsap } from 'gsap';
 
 const Hero = () => {
   const heroRef = useRef();
-  const titleRef = useRef();
-  const subtitleRef = useRef();
+  const nameRef = useRef();
   const buttonRef = useRef();
 
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
     
-    tl.fromTo(titleRef.current, 
+    tl.fromTo(nameRef.current,
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     )
-    .fromTo(subtitleRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-      "-=0.5"
-    )
     .fromTo(buttonRef.current,
-      { opacity: 0, y: 20 },
+      { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
       "-=0.3"
     );
   }, []);
 
-  const scrollToNext = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section ref={heroRef} className="relative h-screen min-h-[500px] flex items-center justify-center overflow-hidden">
-      {/* Particles Background */}
-      <AnimatedBackground variant="particles" />
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+      <AnimatedBackground />
       
-      {/* Rotating Polyhedron - Hidden on very small screens for performance */}
+      {/* Hide polyhedron on small screens for performance */}
       <div className="hidden sm:block">
         <RotatingPolyhedron />
       </div>
       
-      <div className="relative z-20 text-center px-4 max-w-4xl">
-        <div className="mb-4 sm:mb-6">
-          <CustomSplitText
-            text="Hi, I'm "
-            className="text-4xl sm:text-5xl md:text-7xl font-bold font-sora inline-block"
-            delay={500}
-            duration={0.8}
-            from={{ opacity: 0, y: 50 }}
-            to={{ opacity: 1, y: 0 }}
-            splitType="chars"
-            stagger={0.1}
-          />
-          <span className="text-3xl sm:text-5xl md:text-7xl font-bold font-sora inline-block ml-1 sm:ml-2 text-sky-400 hover:text-fuchsia-400 transition-colors duration-300 cursor-default hover:scale-105 transform">
-            Varun
-          </span>
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <div ref={nameRef} className="mb-6 sm:mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-sora leading-tight">
+            <span className="inline-block animate-[fadeIn_0.5s_ease-in-out] opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>Hi,</span>{' '}
+            <span className="inline-block animate-[fadeIn_0.5s_ease-in-out] opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>I'm</span>{' '}
+            <span className="bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 text-transparent inline-block animate-[fadeIn_0.5s_ease-in-out] opacity-0" 
+              style={{ WebkitBackgroundClip: 'text', backgroundClip: 'text', animationDelay: '0.7s', animationFillMode: 'forwards', transition: 'transform 0.3s ease' }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            >
+              Varun
+            </span>
+          </h1>
         </div>
         
         <div className="mb-8 sm:mb-12">
@@ -77,22 +65,31 @@ const Hero = () => {
           />
         </div>
         
-        <CustomClickSpark
-          sparkColor="#d946ef"
-          sparkSize={8}
-          sparkRadius={25}
-          sparkCount={12}
-          duration={500}
-        >
-          <button 
-            ref={buttonRef}
-            onClick={scrollToNext}
-            className="group bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-fuchsia-500/25 flex items-center gap-3 mx-auto"
+        <div ref={buttonRef}>
+          <CustomClickSpark
+            sparkColor="#38bdf8"
+            sparkSize={8}
+            sparkRadius={25}
+            sparkCount={12}
+            duration={600}
           >
-            Explore Work
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
-        </CustomClickSpark>
+            <button 
+              onClick={scrollToProjects}
+              className="bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:shadow-lg hover:shadow-fuchsia-500/25 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-offset-2 focus:ring-offset-transparent animate-[fadeIn_0.5s_ease-in-out] opacity-0 relative overflow-hidden group"
+              style={{ animationDelay: '1s', animationFillMode: 'forwards', backgroundSize: '200% auto' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.style.backgroundPosition = 'right center';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.backgroundPosition = 'left center';
+              }}
+            >
+              <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">Explore Work →</span>
+            </button>
+          </CustomClickSpark>
+        </div>
       </div>
       
       {/* Scroll indicator */}

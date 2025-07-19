@@ -6,78 +6,81 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CustomSplitText = ({
   text,
-  className = '',
-  delay = 50,
-  duration = 0.8,
-  from = { opacity: 0, y: 50 },
+  className = "",
+  delay = 0,
+  duration = 0.6,
+  ease = "power3.out",
+  splitType = "chars",
+  from = { opacity: 0, y: 40 },
   to = { opacity: 1, y: 0 },
-  splitType = 'chars',
   stagger = 0.05,
   triggerOnScroll = false,
+  threshold = 0.1,
+  rootMargin = "-100px"
 }) => {
-  const containerRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current || !text) return;
+    const element = textRef.current;
+    if (!element) return;
 
-    const container = containerRef.current;
-    const elements = container.querySelectorAll('.split-element');
-
-    if (elements.length === 0) return;
-
-    // Set initial state
-    gsap.set(elements, from);
-
-    const timeline = gsap.timeline({
-      delay: delay / 1000,
-      scrollTrigger: triggerOnScroll ? {
-        trigger: container,
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-      } : false
-    });
-
-    timeline.to(elements, {
-      ...to,
-      duration,
-      stagger,
-      ease: 'power3.out'
-    });
-
-    return () => {
-      if (triggerOnScroll) {
-        ScrollTrigger.getAll().forEach(trigger => {
-          if (trigger.trigger === container) {
-            trigger.kill();
-          }
-        });
-      }
-    };
-  }, [text, delay, duration, from, to, stagger, triggerOnScroll]);
-
-  const splitText = () => {
-    if (!text) return [];
-
-    if (splitType === 'chars') {
-      return text.split('').map((char, index) => (
-        <span key={index} className="split-element inline-block">
-          {char === ' ' ? '\u00A0' : char}
-        </span>
-      ));
-    } else if (splitType === 'words') {
-      return text.split(' ').map((word, index) => (
-        <span key={index} className="split-element inline-block mr-2">
-          {word}
-        </span>
-      ));
+    // Split text into spans
+    const words = text.split(' ');
+    const chars = text.split('');
+    
+    let elementsToAnimate = [];
+    
+    if (splitType === 'words') {
+      element.innerHTML = words.map(word => 
+        `<span style="display: inline-block; overflow: hidden;"><span style="display: inline-block;">${word}&nbsp;</span></span>`
+      ).join('');
+      elementsToAnimate = element.querySelectorAll('span > span');
+    } else if (splitType === 'chars') {
+      element.innerHTML = chars.map(char => 
+        char === ' ' ? ' ' : `<span style="display: inline-block; overflow: hidden;"><span style="display: inline-block;">${char}</span></span>`
+      ).join('');
+      elementsToAnimate = element.querySelectorAll('span > span');
     }
 
-    return [<span key={0} className="split-element">{text}</span>];
-  };
+    // Set initial state
+    gsap.set(elementsToAnimate, from);
+
+    // Create animation
+    const tl = gsap.timeline({ delay });
+
+    if (triggerOnScroll) {
+      tl.to(elementsToAnimate, {
+        ...to,
+        duration,
+        ease,
+        stagger,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    } else {
+      tl.to(elementsToAnimate, {
+        ...to,
+        duration,
+        ease,
+        stagger
+      });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger === element) {
+          trigger.kill();
+        }
+      });
+    };
+  }, [text, delay, duration, ease, splitType, from, to, stagger, triggerOnScroll]);
 
   return (
-    <div ref={containerRef} className={className}>
-      {splitText()}
+    <div ref={textRef} className={className}>
+      {text}
     </div>
   );
 };
