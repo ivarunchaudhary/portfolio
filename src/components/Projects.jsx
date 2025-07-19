@@ -55,11 +55,11 @@ const ProjectCard = ({ title, description, link, image, index }) => {
         <div 
           className="absolute inset-0 flex items-center justify-center bg-cover bg-center"
           style={{ 
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${image})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url(${image})`,
             backfaceVisibility: 'hidden'
           }}
         >
-          <h3 className="text-2xl font-bold font-sora text-white text-center px-6 text-gradient-hover transition-all duration-300">
+          <h3 className="text-2xl font-bold font-sora text-white text-center px-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] transition-all duration-300">
             {title}
           </h3>
         </div>
@@ -72,24 +72,26 @@ const ProjectCard = ({ title, description, link, image, index }) => {
             backfaceVisibility: 'hidden'
           }}
         >
-          <p className="text-center text-zinc-200 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+          <p className="text-center font-medium text-white mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
             {description}
           </p>
-          <CustomClickSpark
-            sparkColor="#38bdf8"
-            sparkSize={6}
-            sparkRadius={20}
-            sparkCount={10}
-            duration={400}
-          >
-            <a 
-              href={link}
-              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full transition-all duration-300 text-white hover:scale-105"
+          <div className="z-10 relative">
+            <CustomClickSpark
+              sparkColor="#38bdf8"
+              sparkSize={6}
+              sparkRadius={20}
+              sparkCount={10}
+              duration={400}
             >
-              View Project
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          </CustomClickSpark>
+              <a 
+                href={link}
+                className="flex items-center gap-2 bg-fuchsia-600 hover:bg-fuchsia-700 px-4 py-2 rounded-full transition-all duration-300 text-white hover:scale-105"
+              >
+                View Project
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </CustomClickSpark>
+          </div>
         </div>
       </div>
     </div>
