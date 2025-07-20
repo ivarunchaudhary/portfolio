@@ -110,7 +110,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=300&fit=crop"
     },
     {
-      title: "Routien Planner",
+      title: "Routine Planner",
       description: "A beautiful, modern web application that gives users a personalized daily summary to start their day right.",
       link: "https://github.com/ivarunchaudhary/routine-planner",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop"
