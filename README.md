@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Varun Chaudhary's Portfolio
+=======
+# Varun Portfolio - React Version
+>>>>>>> 4e92025c48cad6a73156f07261e75997167ad31f
 
 [![Vercel Status](https://img.shields.io/badge/Vercel-Deployed-success)](https://varun-portfolio.vercel.app)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://reactjs.org/)
@@ -101,6 +105,7 @@ src/
 - **Performance**: Optimized loading and rendering
 - **SEO**: Meta tags and structured data for better search results
 
+<<<<<<< HEAD
 ## 📝 Project Highlights
 
 - **Online Chatting Platform**: A communication platform for college students
@@ -114,3 +119,5 @@ I'm Varun Chaudhary, a passionate web developer focused on creating intuitive, b
 ## 📬 Contact
 
 Feel free to reach out to me through the contact form on my portfolio website or connect with me on social media.
+=======
+>>>>>>> 4e92025c48cad6a73156f07261e75997167ad31f
